@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_3.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate text-center mb-4">
+                <h1 class="mb-2 bread">Book a Table and Order Food</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Booking / Order <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="ftco-search">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 d-flex align-items-stretch pb-5 pb-md-0">
+                    <div class="py-md-5">
+                        <div class="heading-section ftco-animate mb-5">
+                            <span class="subheading">Order and BooK</span>
+                            <h2 class="mb-4">Order an Item and Book</h2>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" style="color:black; font-size:20px;">
+                                        <label>Phone</label>
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone" maxlength="14"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="color:black; font-size:20px;">
+                                        <label>Date / Time</label>
+                                        <input type="datetime-local" name="date" class="form-control"
+                                               placeholder="Date / Time" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="color:black; font-size:20px;">
+                                        <label>Quantity</label>
+                                        <input type="number" name="qua" class="form-control" placeholder="Quantity"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="color:black; font-size:20px;">
+                                        <label>Items</label>
+                                        <div class="select-wrap one-third">
+                                            <select name="item" class="form-control" required>
+                                                {% for i in m_menu %}
+                                                <option>{{ i.f_name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group" style="color:black; font-size:20px;">
+                                        <label>Address</label>
+                                        <textarea name="add" class="form-control" cols="30" rows="4"
+                                                  placeholder="Your full Address where food to be delivery."
+                                                  required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <div class="form-group">
+                                        <input type="submit" value="Order / Book" class="btn btn-primary py-3 px-5">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

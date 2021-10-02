@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_3.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate text-center mb-4">
+                <h1 class="mb-2 bread">Specialties</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Menu <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="ftco-search">
+            <div class="row">
+                <div class="col-md-12 nav-link-wrap bg-info text-center" style="color:white; font-size:30px; height:55px;">
+                        <p class="ftco-animate active" aria-selected="true">Menu</p>
+                </div>
+                <div class="col-md-12 tab-wrap">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
+                             aria-labelledby="day-1-tab">
+                            <div class="row no-gutters d-flex align-items-stretch">
+                                {% for i in m_menu %}
+                                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                                        <div class="menu-img img"
+                                             style="background-image: url(http://127.0.0.1:8000/media/{{ i.f_image }}); height:250px;"></div>
+                                        <div class="text d-flex align-items-center">
+                                            <div>
+                                                <div class="d-flex">
+                                                    <div class="one-half">
+                                                        <h3>{{ i.f_name }}</h3>
+                                                    </div>
+                                                    <div class="one-forth">
+                                                        <span class="price">Rs{{ i.f_price }}</span>
+                                                    </div>
+                                                </div>
+                                                <p><a {% if user.is_authenticated %} href="../../booking"  name="sub"
+                                                      {% else %} type="button" onclick="alert('Please login First!')"  {% endif %} class="btn btn-primary">Order now</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

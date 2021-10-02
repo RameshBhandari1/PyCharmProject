@@ -1,0 +1,48 @@
+<!--Sign Up Section-->
+{% extends 'base.html' %}
+{% block content %}
+				<section class="ftco-section container-fluid ftco-bg-dark">
+				<div class="row">
+					<div class="col-lg-2"></div>
+					<div class="col-lg-8">
+							<form method="post">
+								<h2 class="form-title text-primary">Create account</h2>
+								{% csrf_token %}
+								<div class="form-group">
+									<input type="text" class="form-control" name="fn" id="fname" placeholder="First Name" required/>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="ln" id="lname" placeholder="Last Name" required/>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="em" id="email" placeholder="Your Email" required/>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="un" id="username" placeholder="User Name" required/>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="pw" id="password" placeholder="Password" required/>
+									<span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="cpw" id="re_password" placeholder="Repeat your password" required/>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
+									<label for="agree-term" class="label-agree-term "><span><span></span></span>I agree all statements in  <a href="#" class="term-service" >Terms of service</a></label>
+								</div>
+								<div class="form-group">
+									<input type="submit" name="reg" class="form-submit" value="Sign Up"/>
+								</div>
+							</form>
+							<p class="loginhere">
+								<div class="loginheretextwhite ">
+								Have already an account ?  <a href="../login" class="loginhere-link">Login here</a>
+								</div>
+							</p>
+						</div>
+					<div class="col-lg-2"></div>
+					</div>
+				</section>
+{% endblock %}
+<!--Sign Up section end-->

@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="home-slider owl-carousel js-fullheight">
+    <div class="slider-item js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text js-fullheight justify-content-center align-items-center"
+                 data-scrollax-parent="true">
+
+                <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">Family Restaurant and Cafe</span>
+                    <h1 class="mb-4">Best Restaurant</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item js-fullheight" style="background-image: url({% static 'images/bg_2.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text js-fullheight justify-content-center align-items-center"
+                 data-scrollax-parent="true">
+
+                <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">Family Restaurant and Cafe</span>
+                    <h1 class="mb-4">Nutritious &amp; Tasty</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item js-fullheight" style="background-image: url({% static 'images/bg_3.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">Family Restaurant and Cafe</span>
+                    <h1 class="mb-4">Delicious Specialties</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="featured">
+                    <div class="row">
+                        {% for i in m_menu %}
+                        <div class="col-md-3">
+                            <div class="featured-menus ftco-animate">
+                                <div class="menu-img img"
+                                     style="background-image: url(http://127.0.0.1:8000/media/{{ i.f_image }});"></div>
+                                <div class="text text-center">
+                                    <h3>{{ i.f_name }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-wrap-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 d-flex">
+                <div class="img img-1 mr-md-2" style="background-image: url({% static 'images/about.jpg' %});"></div>
+                <div class="img img-2 ml-md-2" style="background-image: url({% static 'images/about-1.jpg' %});"></div>
+            </div>
+            <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+                <div class="heading-section mb-4 my-5 my-md-0">
+                    <span class="subheading">About</span>
+                    <h2 class="mb-4">Family Restaurant and Cafe</h2>
+                </div>
+                <p>Eating healthy can be a real struggle for the modern consumer. The food market is saturated with
+                    items that are high in processed grains,
+                    saturated fats, salt and sugar – many of these foods have limited nutritional value.
+                    Thankfully, there are plenty of savoury and nutritious options available for those who want to
+                    provide something better for their families.</p>
+                <p class="time">
+                    <span>Mon - Fri <strong>8 AM - 11 PM</strong></span>
+                    <span><a href="#">9863622122</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+    <div class="container">
+        <div class="row d-md-flex">
+            <div class="col-md-9">
+                <div class="row d-md-flex align-items-center">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="8">0</strong>
+                                <span>Years of Experienced</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="63">0</strong>
+                                <span>Menus/Dish</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="43">0</strong>
+                                <span>Staffs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="1261">0</strong>
+                                <span>Happy Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center text-md-left">
+                <p>When you want a dining experience, come and see us, and we'll tantalise your taste buds with flavours
+                    that you never thought possible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Services</span>
+                <h2 class="mb-4">Catering Services</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-cake"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Birthday Party</h3>
+                        <p>The best thing about having a birthday party at any reliable restaurant i.e. at Family
+                            Restaurant and Cafe is that
+                            you would be having much less work to perform before or even after the event. Come and
+                            explore us on your birthday.
+                            As we arrange everything very correctly and we are one of the best restaurant in Patna for
+                            birthday Party.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-meeting"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Business Meetings</h3>
+                        <p> It is a great location for business meetings because it is a mid-priced restaurant with
+                            square tables that
+                            can accommodate up to four people at a time. If the indoor restaurant is noisier than you'd
+                            like, you can always sit
+                            in the sidewalk seating area for a casual dining option. Additionally, it has private rooms,
+                            which can be reserved for larger business meetings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+                <div class="media block-6 services d-block">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-tray"></span>
+                    </div>
+                    <div class="media-body p-2 mt-3">
+                        <h3 class="heading">Wedding Party</h3>
+                        <p>If you and your partner are foodies, and you're looking for a wedding venue with a little
+                            more personality than your typical ballroom,
+                            look no further than your favorite local restaurant. Wedding food can sometimes get a bad
+                            rap, so celebrating with your
+                            guests at a spot known for its cuisine is a guaranteed way to make sure they leave happy and
+                            full!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row no-gutters justify-content-center mb-5 pb-2">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Specialties</span>
+                <h2 class="mb-4">Our Menu</h2>
+            </div>
+        </div>
+        <div class="row no-gutters d-flex align-items-stretch">
+            {% for i in menu %}
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                    <div class="menu-img img"
+                         style="background-image: url(http://127.0.0.1:8000/media/{{ i.f_image }}); height:250px;"></div>
+                    <div class="text d-flex align-items-center">
+                        <div>
+                            <div class="d-flex">
+                                <div class="one-half">
+                                    <h3>{{ i.f_name }}</h3>
+                                </div>
+                                <div class="one-forth">
+                                    <span class="price">Rs{{ i.f_price }}</span>
+                                </div>
+                            </div>
+                            <p><a {% if user.is_authenticated %} href="../../booking"  name="sub"
+                               {% else %} type="button" onclick="alert('Please login First!')" {% endif %} class="btn btn-primary">Order now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Chef</span>
+                <h2 class="mb-4">Our Master Chef</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in a_chef %}
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="staff">
+                    <div class="img" style="background-image: url(http://127.0.0.1:8000/media/{{ i.c_image }})">
+
+                    </div>
+                    <div class="text pt-4">
+                        <h3>{{ i.c_name }}</h3>
+                        <span class="position mb-2">{{ i.c_post }}</span>
+                        <div class="faded">
+                            <ul class="ftco-social d-flex">
+                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section testimony-section img">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-12 text-center heading-section ftco-animate">
+                <span class="subheading">Testimony</span>
+                <h2 class="mb-4">Happy Customer</h2>
+            </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl">
+                    {% for c in a_customer %}
+                    <div class="item">
+                        <div class="testimony-wrap text-center pb-5">
+                            <div class="user-img mb-4"
+                                 style="background-image: url(http://127.0.0.1:8000/media/{{ c.cu_image }})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                            </div>
+                            <div class="text p-3">
+                                <p class="mb-4">{{ c.cu_review }}</p>
+                                <p class="name">{{ c.cu_name }}</p>
+                                <span class="position">Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+                <span class="subheading">Blog</span>
+                <h2 class="mb-4">Recent Posts</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for s in story %}
+            <div class="col-md-4 ftco-animate">
+                <div class="blog-entry">
+                    <a href="blog-single.html" class="block-20"
+                       style="background-image: url(http://127.0.0.1:8000/media/{{ s.image }});">
+                    </a>
+                    <div class="text pt-6 pb-4 px-4" style="height:280px;">
+                        <div class="meta">
+                            <div><a href=""> {{ s.date}} </a></div>
+                            <div><a href="">Admin</a></div>
+
+                            <h3 class="heading"> {{ s.title }} </h3>
+                            <p class="clearfix">
+                            <p class="float-left read"> {{ s.des }}</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
